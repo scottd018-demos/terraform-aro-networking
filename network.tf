@@ -31,6 +31,7 @@ locals {
   subnets_control  = local.subnet_cidrs[0]
   subnets_worker   = local.subnet_cidrs[1]
   subnets_jumphost = var.private ? local.subnet_cidrs[2] : null
+  subnets_firewall = var.private ? local.subnet_cidrs[3] : null
 }
 
 resource "azurerm_subnet" "control_plane" {
