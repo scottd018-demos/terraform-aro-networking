@@ -2,6 +2,10 @@ output "public_ip" {
   value = try(azurerm_public_ip.jumphost[0].ip_address, null)
 }
 
+output "vnet_id" {
+  value = try(azurerm_virtual_network.aro.id, null)
+}
+
 output "control_plane_subnet_id" {
   value = try(azurerm_subnet.control_plane.id, null)
 }
